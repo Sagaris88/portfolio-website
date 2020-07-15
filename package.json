@@ -1,25 +1,25 @@
 {
-  "name": "lawrence",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "hbs": "^4.1.1",
-    "nodemon": "^2.0.4"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sagaris88/portfolio-website.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Sagaris88/portfolio-website/issues"
-  },
-  "homepage": "https://github.com/Sagaris88/portfolio-website#readme"
+    "name": "lawrence",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.1",
+        "hbs": "^4.1.1",
+        "nodemon": "^2.0.4"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node src/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Sagaris88/portfolio-website.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Sagaris88/portfolio-website/issues"
+    },
+    "homepage": "https://github.com/Sagaris88/portfolio-website#readme"
 }
