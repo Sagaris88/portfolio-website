@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+    
+    <link rel="icon" href="/img/iconMain-10.png">
+    <link rel='stylesheet' href="/css/styles.css">
+
+</head>
+
+<body>
+
+    <title> Lawrence Crosstown LRT </title>
+
+    {{>header}}
+
+    <div class="container main-content">
+        <div class="post-container">
+            <div class="post">
+
+                <h1 id="title"> Lawrence Midtown LRT </h1>
+
+                <h1> Expected Completion: <strong>2031</strong> </h1>
+
+                <h2> Get across town 60% faster </h2>
+                <p> New, reliable rapid transit is coming to Toronto with the Lawrence Crosstown Light Rail Transit (LRT) project. With 13 stations and stops running east-west across midtown Toronto, we're building the new Crosstown LRT to get you get you
+                    where you need to be better, faster and easier. </p>
+                <p> It will give families like yours the freedom to live, work and play, in a city always growing into something greater. </p>
+                <p> The 52 Lawrence West route is the busiest TTC bus route in the City, carrying nearly 44,000 customers on a typical weekday. The 52 Lawrence has an average frequency of approximately a bus every 3 minutes but severe traffic congestion makes
+                    headways unpredicatable and your commute longer than it should be.</p>
+                <p> Existing plans and modifications to Lawrence are simply not enough to handle the thousands of commuters and length traffic times along Lawrence West. </p>
+
+                <h2> Stations and Stops </h2>
+                <p>Click on station name for more information.</p>
+
+                {{>imagemap}}
+
+                <a href="https://i.imgur.com/hG64rRh.png">View Enlarged Map</a>
+
+                <h2> Connections </h2>
+                <p> A true example of a new regional rapid transit network, the Crosstown will link to TTC 24 bus routes, two TTC subway stations (Lawrence Heights and Lawrence), and two GO stations (Weston and Joyce), all featuring 15-minute or better service
+                    and new stations, to connect you to your city.
+                </p>
+
+                <h2> Speed </h2>
+                <p> Move across 13 kilometres faster than a streetcar, a bus, or a rideshare. In fact, your Crosstown LRT vehicle will be up to 60% faster than your current travel time. How's that for fast?
+                </p>
+
+                <h2> Relief </h2>
+                <p> Between Weston Station and Leaside Station, TTC bus routes will be replaced and upgraded with light rail vehicles traveling underground and in dedicated lanes, outside of traffic. With fewer buses and more drivers switching to transit,
+                    everyone will enjoy a different kind of transit journey. That's a benefit for everyone.
+                </p>
+
+                <h2> Project Overview </h2>
+                <p> The Lawrence Crosstown is the cornerstone of the $6 billion investment. The Midtown line will run underground for more than 13 kilometres, from Weston Road to Bayview Avenue and down to Eglinton Avenue.</p>
+                <p> The project, which is under construction now, is creating thousands of design and construction jobs, and will provide lasting economic benefits to Toronto and its surrounding region.</p>
+                <p> For employers, public transit is how their workforce commutes. For thousands of students, it's how they get to class. For seniors, it's how they get to their medical appointments and maintain independence in their senior years. Once complete,
+                    the Crosstown service will cut transit time significantly along this important mid-town corridor.
+                </p>
+
+                <h2> Future Extensions </h2>
+                <p> Later phases include extensions to Pearson International Airport and through Scarborough all the way to Rouge Park Station. </p>
+                <p>The Crosstown will open as Line 9 Lawrence, in 2031. Monitor construction progress and milestones by visiting the Crosstown website at www.thecrosstown.ca.</p>
+
+                <h2> Do you Like my Work? </h2>
+
+                <p> If you like my transit plan for Lawrence, please take the time for upvoting or downvoting this proposal and for making comments below. </p>
+
+                <br>
+
+                <button onclick="upvote()"> Upvote </button>
+
+                <button onclick="downvote()"> Downvote </button>
+
+                <p id="upvote"> 0 votes </p>
+
+                <br>
+
+                <input id="commentInput" type="text" placeholder="Comment">
+
+                <button onclick="comment()"> Submit </button>
+
+                <p id="commentPlace"></p>
+
+                <br>
+
+                <label>What Colour Should The Lawrence Line Be:</label>
+
+                <input type="color">
+
+                <br>
+
+                <br>
+
+                <input placeholder="Email">
+
+                <input placeholder="Password" type="password">
+
+                <input type="checkbox">
+
+                <br>
+
+                <em>Send me updates</em>
+
+                <button>Sign Up</button>
+
+                <br>
+
+                <p>Volume:</p>
+
+                <input type="range">
+
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+
+    <script src="counter.js"></script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+    
+    <link rel="icon" href="/img/iconMain-10.png">
+    <link rel='stylesheet' href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/Lightbox.css">
+
+</head>
+
+<body>
+
+    {{>header}}
+
+    <title> Lawrence Crosstown LRT </title>
+
+    <!-- Images used to open the lightbox -->
+    <div class="lightContainer">
+        <div class="lightRow">
+            <div class="lightColumn">
+                <img src="img/Spadina/1-01.png" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:100%">
+            </div>
+            <div class="lightColumn">
+                <img src="img/Spadina/2-01.png" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:100%">
+            </div>
+            <div class="lightColumn">
+                <img src="img/Spadina/3-01.png" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:100%">
+            </div>
+            <div class="lightColumn">
+                <img src="img/Spadina/4-01.png" onclick="openModal();currentSlide(4)" class="hover-shadow" style="width:100%">
+            </div>
+        </div>
+
+        <!-- The Modal/Lightbox -->
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+
+                <div class="mySlides">
+                    <div class="numbertext">1 / 4</div>
+                    <img src="img/Spadina/1-01.png" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 4</div>
+                    <img src="img/Spadina/2-01.png" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">3 / 4</div>
+                    <img src="img/Spadina/3-01.png" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">4 / 4</div>
+                    <img src="img/Spadina/4-01.png" style="width:100%">
+                </div>
+
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Caption text -->
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <!-- Thumbnail image controls -->
+                <div class="lightColumn">
+                    <img class="demo" src="img/Spadina/1-01.png" onclick="currentSlide(1)" alt="Nature" style="width:10%">
+                </div>
+
+                <div class="lightColumn">
+                    <img class="demo" src="img/Spadina/2-01.png" onclick="currentSlide(2)" alt="Snow" style="width:10%">
+                </div>
+
+                <div class="lightColumn">
+                    <img class="demo" src="img/Spadina/3-01.png" onclick="currentSlide(3)" alt="Mountains" style="width:10%">
+                </div>
+
+                <div class="lightColumn">
+                    <img class="demo" src="img/Spadina/4-01.png" onclick="currentSlide(4)" alt="Lights" style="width:10%">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="about">
+                <h1 class="about-title">Spadina Expressway: Inception and Demise in the Headlines</h3>
+                    <div class="about-content">
+                        <p>This project combines my interests and skills in urban planning and visual art. The Spadina Expressway would have impacted my life as a student and numerous other people in the surrounding area. My faculty building itself would
+                            have been demolished to make way for the scuppered highway proposal. One of the ways it was scuppered was through media. Newspapers like the Toronto Star (which my project used archival pages of) ran many news stories about
+                            the Spadina Expressway and the activists like Jane Jacobs and disseminated the debate toward the whole region and into Queen's Park. It was through the proliferation of the issue that Bill Davis finally cancelled the project.
+                            My project consists of archival news stories interlayed and curated to show the progression of the Spadina Expressway from its inception to its demise.
+                        </p>
+                        <br>
+                        <object data="Spadina.pdf" type="application/pdf" width=100% height=1000px></object>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+
+    <script src="script.js "></script>
+
+</body>
+
+</html>
