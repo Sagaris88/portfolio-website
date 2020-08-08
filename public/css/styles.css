@@ -212,3 +212,7 @@ a:hover {
     line-height: 20px;
     font-size: 40px;
 }
+
+#mapid {
+    height: 180px;
+}

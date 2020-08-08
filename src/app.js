@@ -44,11 +44,10 @@ app.get('/spadina', (req, res) => {
     })
 })
 
-app.get('/weather', (req, res) => {
-    res.send({
-        location: 'Toronto',
-        temperature: 30,
-        forecast: 'Sunny'
+app.get('/store', (req, res) => {
+    res.render('store', {
+        title: 'Help Me',
+        message: 'Questions?',
     })
 })
 
