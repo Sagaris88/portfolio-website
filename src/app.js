@@ -1,6 +1,9 @@
 const path = require('path')
 const express = require('express')
-const hbs = require('hbs')
+const hbs = require('hbs');
+const fileUpload = require('express-fileupload');
+
+const calculateSales = require('./calculateSales');
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -17,6 +20,10 @@ hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
+
+app.use(fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+}));
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -44,12 +51,22 @@ app.get('/spadina', (req, res) => {
     })
 })
 
-app.get('/store', (req, res) => {
+app.get('/viewSales', function (req, res) {
+    res.render('viewSales');
+});
+
+app.post('/store', (req, res) => {
+    const decodedContents = req.files['fileToUpload'].data.toString();
+
+    const mapOutput = calculateSales(decodedContents);
+
     res.render('store', {
         title: 'Help Me',
         message: 'Questions?',
-    })
-})
+        mapOutputJson: JSON.stringify(mapOutput),
+    });
+});
+
 
 app.get('/test', (req, res) => {
     res.render('test', {

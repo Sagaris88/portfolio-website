@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link rel="icon" href="/img/iconMain-10.png">
+    <link rel='stylesheet' href="/css/styles.css">
+
+</head>
+
+<body>
+
+    {{>header}}
+
+    <title> in-transit store </title>
+
+    <div class="container main-content">
+        <div class="post-container">
+            <div class="post">
+                <form action="store" method="post" enctype="multipart/form-data">
+                    Select CSV to upload:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload CSV File" name="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+
+</body>
+
+</html>
