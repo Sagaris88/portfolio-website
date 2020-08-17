@@ -9,8 +9,8 @@ const stateNames = require('./stateNames');
  */
 module.exports = function (fileContents) {
     const splitFileContents = fileContents.split('\n');
-    // splitFileContents.pop()
-    // splitFileContents.pop();
+    splitFileContents.pop()
+    splitFileContents.pop();
 
     const cleanedData = splitFileContents.join('\n');
 
