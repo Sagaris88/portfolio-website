@@ -108,7 +108,7 @@ module.exports = {
     'OK': 'Oklahoma',
     'OR': 'Oregon',
     'PA': 'Pennsylvania',
-    'RH': 'Rhode Island',
+    'RI': 'Rhode Island',
     'SC': 'South Carolina',
     'SD': 'South Dakota',
     'TN': 'Tennessee',

@@ -213,6 +213,34 @@ a:hover {
     font-size: 40px;
 }
 
+/* Map */
+
 #mapid {
     height: 560px;
+}
+
+/* Buttons */
+
+#fileToUpload {
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+#submit {
+    background-color: #6C96D8;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+#submit:hover {
+    color: #222;
 }

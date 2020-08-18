@@ -19,10 +19,10 @@ module.exports = function (fileContents) {
         skip_empty_lines: true
     });
 
-    // // Only United States
-    // records = records.filter(function (record) {
-    //     return record['Destination Country'] === 'United States';
-    // });
+    // // Only Paid, To Be Paid or Pending
+    records = records.filter(function (record) {
+        return record['Status'] !== 'cancelled';
+    });
 
     for (let feature of mapInput.features) {
         const area = feature.properties.name;
@@ -43,7 +43,14 @@ module.exports = function (fileContents) {
         }
 
         feature.properties.sales = count;
+
+        // const totalSales = feature.properties.sales
+        // console.log(feature.properties.sales)
     }
+
+    // const number = [5, 6]
+    // console.log(5, 6, 1)
+    // console.log(Math.max(...number))
 
     // we mutated it
     const mapOutput = mapInput;

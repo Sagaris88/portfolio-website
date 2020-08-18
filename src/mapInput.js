@@ -12659,7 +12659,7 @@ module.exports = {
             "type": "Feature",
             "id": "107",
             "properties": {
-                "name": "Nova Scota",
+                "name": "Nova Scotia",
             },
             "geometry": {
                 "type": "MultiPolygon",
