@@ -19,10 +19,22 @@ module.exports = function (fileContents) {
         skip_empty_lines: true
     });
 
-    // // Only Paid, To Be Paid or Pending
+    // records = records.filter(function (record) {
+    //     record.filter(record => record.status == 'paid')
+    //     record.forEach(record => record.status = "cancelled")
+    //     return record
+    // })
+
+    // Only Paid, To Be Paid or Pending
     records = records.filter(function (record) {
         return record['Status'] !== 'cancelled';
     });
+
+    // Western Australia/Washington Fix
+    records.filter(records => records[ 'Destination Country'] == 'Australia')
+    .filter(records => records[ 'Destination State' ] == 'WA')
+    .forEach(records => records[ 'Destination State' ] = 'AU-WA')
+
 
     for (let feature of mapInput.features) {
         const area = feature.properties.name;
@@ -30,9 +42,7 @@ module.exports = function (fileContents) {
         let count = 0;
 
         for (const record of records) {
-            const destCountry = record['Destination Country'];
             const destState = record['Destination State'];
-            const quantity = record['Quantity'];
             const destStateName = stateNames[destState];
 
             if (destStateName) {
@@ -43,14 +53,10 @@ module.exports = function (fileContents) {
         }
 
         feature.properties.sales = count;
-
-        // const totalSales = feature.properties.sales
-        // console.log(feature.properties.sales)
+        const totalSales = feature.properties.sales
     }
 
-    // const number = [5, 6]
-    // console.log(5, 6, 1)
-    // console.log(Math.max(...number))
+    // console.log(azur)
 
     // we mutated it
     const mapOutput = mapInput;

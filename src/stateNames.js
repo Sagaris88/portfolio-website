@@ -1,7 +1,8 @@
 module.exports = {
 
 // Australia
-    'AU-ACT': 'Asutralian Capital Territory',
+    'AU-ACT': 'Australian Capital Territory',
+    'ACT': 'Australian Capital Territory',
     'NSW': 'New South Wales',
     'AU-NT': 'Northern Territory',
     'QLD': 'Queensland',
@@ -10,7 +11,7 @@ module.exports = {
     'TAS': 'Tasmania',
     'VIC': 'Victoria',
     'Victoria': 'Victoria',
-    'WA': 'Western Australia', // Same Code as Washington
+    'AU-WA': 'Western Australia', // Same Code as Washington
 
 // Austria
     'Burgenland': 'Burgenland',
@@ -20,7 +21,7 @@ module.exports = {
     'Steiermark': 'Steiermark',
     'Tirol': 'Tirol',
     'Oberösterreich': 'Oberösterreich',
-    'wien': 'wien',
+    'wien ': 'Vienna',
     'Vorarlberg': 'Vorarlberg',
 
 
@@ -38,6 +39,44 @@ module.exports = {
     'QC': 'Quebec',
     'SK': 'Saskatchewan',
     'YU': 'Yukon',
+
+// Canada
+    'Auvergne-Rhône-Alpes': 'Auvergne-Rhône-Alpes',
+    'Bourgogne-Franche-Comté': 'Bourgogne-Franche-Comté',
+    'Bretagne': 'Bretagne',
+    'Centre-Val de Loire': 'Centre-Val de Loire',
+    'Corse': 'Corse',
+    'Grand Est': 'Grand Est',
+    'Guadeloupe': 'Guadeloupe',
+    'Guyane': 'Guyane',
+    'Île-de-France': 'Île-de-France',
+    'La Réunion': 'La Réunion',
+    'Martinique': 'Martinique',
+    'Mayotte': 'Mayotte',
+    'Normandie': 'Normandie',
+    'Nouvelle-Aquitaine': 'Nouvelle-Aquitaine',
+    'Occitanie': 'Occitanie',
+    'Pays de la Loire': 'Pays de la Loire',
+    'Île-de-France': 'Île-de-France',
+    'Provence-Alpes-Côte d\'Azur ': 'Provence-Alpes-Côte d\'Azur',
+
+// Germany
+    'BW': 'Baden-Württemberg',
+    'Baden-WÃ¼rttemberg': 'Baden-Württemberg',
+    'BY': 'Bayern',
+    'BE': 'Berlin',
+    'Berlin': 'Berlin',
+    'BB': 'Brandenburg',
+    'HB': 'Bremen',
+    'HH': 'Hamburg',
+    'HE': 'Hessen',
+    'NI': 'Niedersachsen',
+    'MV': 'Mecklenburg-Vorpommern',
+    'NW': 'Nordrhein-Westfalen',
+    'RP': 'Rheinland-Pfalz',
+    'SL': 'Saarland',
+    'SN': 'Sachsen',
+    'ST': 'Sachsen-Anhalt',
 
 // Germany
     'BW': 'Baden-Württemberg',
@@ -57,6 +96,54 @@ module.exports = {
     'SN': 'Sachsen',
     'ST': 'Sachsen-Anhalt',
 
+// Ireland
+    'Antrim': 'Antrim',
+    'Armagh': 'Armagh',
+    'Carlow': 'Carlow',
+    'Cavan': 'Cavan',
+    'Clare': 'Clare',
+    'Cork': 'Cork',
+    'Donegal': 'Donegal',
+    'Down': 'Down',
+    'Dublin': 'Dublin',
+    'Fermanagh': 'Fermanagh',
+    'Galway': 'Galway',
+    'Kerry': 'Kerry',
+    'Kildare': 'Kildare',
+    'Kilkenny': 'Kilkenny',
+    'Laois': 'Laois',
+    'Leitrim': 'Leitrim',
+    'Limerick': 'Limerick',
+    'Londonderry': 'Derry',
+    'Derry': 'Derry',
+    'Longford': 'Longford',
+    'Louth': 'Louth',
+    'Mayo': 'Mayo',
+    'Meath': 'Meath',
+    'Monaghan': 'Monaghan',
+    'Offaly': 'Offaly',
+    'Roscommon': 'Roscommon',
+    'Sligo': 'Sligo',
+    'Tipperary': 'Tipperary',
+    'Tyrone': 'Tyrone',
+    'Waterford': 'Waterford',
+    'Westmeath': 'Westmeath',
+    'Wexford': 'Wexford',
+    'Wicklow': 'Wicklow',
+
+// Netherlands
+    'Drenthe': 'Drenthe',
+    'Flevoland': 'Flevoland',
+    'Fryslan': 'Friesland',
+    'Gelderland': 'Gelderland',
+    'Groningen': 'Groningen',
+    'Limburg': 'Limburg',
+    'Noord-Brabant': 'North Brabant',
+    'Noord-Holland': 'North Holland',
+    'Oaveriessel': 'Overijssel',
+    'Zuid-Holland': 'South Holland',
+    'Utrecht': 'Utrecht',
+    'Zeeland': 'Zeeland',
 
 // United Kingdom
     'England': 'England', // Both England and counties
