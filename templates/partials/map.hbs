@@ -1,42 +1,117 @@
     {{!-- pk.eyJ1Ijoic2FnYXJpczg4IiwiYSI6ImNrYzlhOThjZzA3eGUyeW95eTFwNWZkcjEifQ.Cfe4bXAcopqtohZuvhQ9XQ --}}
 
 <script>
-	var mymap = L.map('mapid').setView([37.8, -96], 3);
+    var statesData = {{{mapOutputJson}}};
+    var countryData = {{{mapOutputJsonCountry}}}
 
-	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2FnYXJpczg4IiwiYSI6ImNrYzlhOThjZzA3eGUyeW95eTFwNWZkcjEifQ.Cfe4bXAcopqtohZuvhQ9XQ', {
+    var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+
+    // Map Layers
+	var greyscale = L.tileLayer(mbUrl, {
 		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		attribution: mbAttr,
 		id: 'mapbox/light-v9',
 		tileSize: 512,
 		zoomOffset: -1
-	}).addTo(mymap);
+	});
 
-	var geojson = L.geoJson(statesData).addTo(mymap);
+	var light = L.tileLayer(mbUrl, {
+		maxZoom: 18,
+		attribution: mbAttr,
+		id: 'mapbox/light-v9',
+		tileSize: 512,
+		zoomOffset: -1
+	});
 
-    function getColor(d) {
-    return d > 12 ? '#b10026' :
-           d > 10  ? '#e31a1c' :
-           d > 8  ? '#fc4e2a' :
-           d > 6  ? '#fd8d3c' :
-           d > 4   ? '#feb24c' :
-           d > 2   ? '#fed976' :
-           d >= 1   ? '#ffeda0' :
-           d >= 0   ? '#ffffff':
-                      '#ffffff';
+    var streets = L.tileLayer(mbUrl, {
+		maxZoom: 18,
+		attribution: mbAttr,
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	});
+
+
+    // States Data
+	var states = L.geoJson(statesData);
+
+    function getColorStates(sales) {
+    return sales > 12  ? '#b10026' :
+           sales > 10  ? '#e31a1c' :
+           sales > 8   ? '#fc4e2a' :
+           sales > 6   ? '#fd8d3c' :
+           sales > 4   ? '#feb24c' :
+           sales > 2   ? '#fed976' :
+           sales >= 1  ? '#ffeda0' :
+           sales >= 0  ? '#ffffff' :
+                         '#ffffff' ;
     }
 
-    function style(feature) {
+    function styleStates(feature) {
     return {
-        fillColor: getColor(feature.properties.sales),
+        fillColor: getColorStates(feature.properties.sales),
         weight: 1,
         opacity: 1,
         color: 'white',
         dashArray: '3',
         fillOpacity: 0.7
-    };
+    }}
+
+    L.geoJson(statesData, { style: styleStates }).addTo(states);
+
+
+    // Country Data
+	var country = L.geoJson(countryData);
+
+    function getColorCountry(sales) {
+    return sales > 24  ? '#b10026' :
+           sales > 20  ? '#e31a1c' :
+           sales > 16   ? '#fc4e2a' :
+           sales > 12   ? '#fd8d3c' :
+           sales > 8   ? '#feb24c' :
+           sales > 4   ? '#fed976' :
+           sales >= 1  ? '#ffeda0' :
+           sales >= 0  ? '#ffffff' :
+                         '#ffffff' ;
     }
 
-    L.geoJson(statesData, {style: style}).addTo(mymap);
+    function styleCountry(feature) {
+    return {
+        fillColor: getColorCountry(feature.properties.sales),
+        weight: 1,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    }}
+
+    L.geoJson(countryData, { style: styleCountry }).addTo(country);
+
+
+    // Base Map
+    var map = L.map('mapid', {
+		center: [37.8, -96],
+		zoom: 3,
+        layers: [light, states]
+	});
+
+
+    // Layers
+    var baseLayers = {
+		"Light": light,
+		"Streets": streets
+	};
+
+    var overlays = {
+		"States": states,
+        "Country": country
+	};
+    
+	L.control.layers(baseLayers, overlays).addTo(map);
+
+
 </script>

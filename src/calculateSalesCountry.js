@@ -1,7 +1,7 @@
 const parse = require('csv-parse/lib/sync');
 
-const mapInput = require('./mapInput');
-const namesState = require('./namesState');
+const mapInputCountry = require('./mapInputCountry');
+const namesCountry = require('./namesCountry');
 
 /**
  * Takes a string and gives you map data!
@@ -31,22 +31,17 @@ module.exports = function (fileContents) {
         return record['Status'] !== 'cancelled';
     });
 
-    // Western Australia/Washington Fix
-    records.filter(records => records[ 'Destination Country'] == 'Australia')
-    .filter(records => records[ 'Destination State' ] == 'WA')
-    .forEach(records => records[ 'Destination State' ] = 'AU-WA')
-    
-    for (let feature of mapInput.features) {
+    for (let feature of mapInputCountry.features) {
         const area = feature.properties.name;
 
         let count = 0;
 
         for (const record of records) {
-            const destState = record['Destination State'];
-            const destStateName = namesState[destState];
+            const destCountry = record['Destination Country'];
+            const destCountryName = namesCountry[destCountry];
 
-            if (destStateName) {
-                if (destStateName.toLowerCase() === area.toLowerCase()) {
+            if (destCountryName) {
+                if (destCountryName.toLowerCase() === area.toLowerCase()) {
                     count++;
                 }
             }
@@ -59,9 +54,9 @@ module.exports = function (fileContents) {
     // console.log(azur)
 
     // we mutated it
-    const mapOutput = mapInput;
+    const mapOutputCountry = mapInputCountry;
     
-    return mapOutput;
+    return mapOutputCountry;
 };
 
 
@@ -70,7 +65,7 @@ module.exports = function (fileContents) {
 //     return {
 //         type: 'Feature',
 //         properties: {
-//             name: record['Destination State'],
+//             name: record['Destination Country'],
 //             sales: 1
 //         }
 //     };

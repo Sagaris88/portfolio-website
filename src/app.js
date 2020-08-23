@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const fileUpload = require('express-fileupload');
 
 const calculateSales = require('./calculateSales');
+const calculateSalesCountry = require('./calculateSalesCountry');
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -59,11 +60,13 @@ app.post('/store', (req, res) => {
     const decodedContents = req.files['fileToUpload'].data.toString();
 
     const mapOutput = calculateSales(decodedContents);
+    const mapOutputCountry = calculateSalesCountry(decodedContents);
 
     res.render('store', {
         title: 'Help Me',
         message: 'Questions?',
         mapOutputJson: JSON.stringify(mapOutput),
+        mapOutputJsonCountry: JSON.stringify(mapOutputCountry),
     });
 });
 
