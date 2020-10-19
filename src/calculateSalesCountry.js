@@ -19,7 +19,6 @@ module.exports = function (fileContents) {
         skip_empty_lines: true
     });
 
-    const apple = 'Apple'
     // records = records.filter(function (record) {
     //     record.filter(record => record.status == 'paid')
     //     record.forEach(record => record.status = "cancelled")
@@ -30,6 +29,10 @@ module.exports = function (fileContents) {
     records = records.filter(function (record) {
         return record['Status'] !== 'cancelled';
     });
+        
+    // for (var {'Destination Country': d} of records) {
+    //     console.log(d);
+    // }
 
     for (let feature of mapInputCountry.features) {
         const area = feature.properties.name;
@@ -48,7 +51,7 @@ module.exports = function (fileContents) {
         }
 
         feature.properties.sales = count;
-        const totalSales = feature.properties.sales
+        // const totalSales = feature.properties.sales
     }
 
     // console.log(azur)

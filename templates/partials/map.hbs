@@ -11,26 +11,10 @@
 
 
     // Map Layers
-	var greyscale = L.tileLayer(mbUrl, {
-		maxZoom: 18,
-		attribution: mbAttr,
-		id: 'mapbox/light-v9',
-		tileSize: 512,
-		zoomOffset: -1
-	});
-
 	var light = L.tileLayer(mbUrl, {
 		maxZoom: 18,
 		attribution: mbAttr,
 		id: 'mapbox/light-v9',
-		tileSize: 512,
-		zoomOffset: -1
-	});
-
-    var streets = L.tileLayer(mbUrl, {
-		maxZoom: 18,
-		attribution: mbAttr,
-		id: 'mapbox/streets-v11',
 		tileSize: 512,
 		zoomOffset: -1
 	});
@@ -40,15 +24,21 @@
 	var states = L.geoJson(statesData);
 
     function getColorStates(sales) {
-    return sales > 12  ? '#b10026' :
-           sales > 10  ? '#e31a1c' :
-           sales > 8   ? '#fc4e2a' :
-           sales > 6   ? '#fd8d3c' :
-           sales > 4   ? '#feb24c' :
-           sales > 2   ? '#fed976' :
-           sales >= 1  ? '#ffeda0' :
-           sales >= 0  ? '#ffffff' :
-                         '#ffffff' ;
+    return  sales > 24  ? '#98002B' :
+            sales > 22  ? '#b10026' :
+            sales > 20  ? '#CA0D21' :
+            sales > 18  ? '#e31a1c' :
+            sales > 16  ? '#F03423' :
+            sales > 14  ? '#fc4e2a' :
+            sales > 12  ? '#FD6E33' :
+            sales > 10  ? '#fd8d3c' :
+            sales > 8   ? '#FEA044' :
+            sales > 6   ? '#feb24c' :
+            sales > 4   ? '#FEC661' :
+            sales > 2   ? '#fed976' :
+            sales >= 1  ? '#ffeda0' :
+            sales >= 0  ? '#ffffff' :
+                          '#ffffff' ;
     }
 
     function styleStates(feature) {
@@ -68,15 +58,21 @@
 	var country = L.geoJson(countryData);
 
     function getColorCountry(sales) {
-    return sales > 24  ? '#b10026' :
-           sales > 20  ? '#e31a1c' :
-           sales > 16   ? '#fc4e2a' :
-           sales > 12   ? '#fd8d3c' :
-           sales > 8   ? '#feb24c' :
-           sales > 4   ? '#fed976' :
-           sales >= 1  ? '#ffeda0' :
-           sales >= 0  ? '#ffffff' :
-                         '#ffffff' ;
+    return  sales > 48  ? '#98002B' :
+            sales > 44  ? '#b10026' :
+            sales > 40  ? '#CA0D21' :
+            sales > 36  ? '#e31a1c' :
+            sales > 32  ? '#F03423' :
+            sales > 28  ? '#fc4e2a' :
+            sales > 24  ? '#FD6E33' :
+            sales > 20  ? '#fd8d3c' :
+            sales > 16  ? '#FEA044' :
+            sales > 12  ? '#feb24c' :
+            sales > 8   ? '#FEC661' :
+            sales > 4   ? '#fed976' :
+            sales >= 1  ? '#ffeda0' :
+            sales >= 0  ? '#ffffff' :
+                          '#ffffff' ;
     }
 
     function styleCountry(feature) {
@@ -102,8 +98,7 @@
 
     // Layers
     var baseLayers = {
-		"Light": light,
-		"Streets": streets
+		"Light": light
 	};
 
     var overlays = {

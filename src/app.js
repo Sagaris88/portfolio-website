@@ -1,10 +1,11 @@
-const path = require('path')
+const path = require('path') // Core node module, no need to install
 const express = require('express')
 const hbs = require('hbs');
 const fileUpload = require('express-fileupload');
 
 const calculateSales = require('./calculateSales');
 const calculateSalesCountry = require('./calculateSalesCountry');
+// const filterCountry = require('./filterCountry');
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -25,6 +26,7 @@ app.use(express.static(publicDirectoryPath))
 app.use(fileUpload({
     limits: { fileSize: 50 * 1024 * 1024 },
 }));
+
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -61,12 +63,14 @@ app.post('/store', (req, res) => {
 
     const mapOutput = calculateSales(decodedContents);
     const mapOutputCountry = calculateSalesCountry(decodedContents);
+    // const mapOutputFilter = filterCountry(decodedContents);
 
     res.render('store', {
         title: 'Help Me',
         message: 'Questions?',
         mapOutputJson: JSON.stringify(mapOutput),
         mapOutputJsonCountry: JSON.stringify(mapOutputCountry),
+        // mapOutputFilter: JSON.stringify(mapOutputFilter),
     });
 });
 

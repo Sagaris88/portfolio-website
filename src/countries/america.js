@@ -4918,7 +4918,6 @@ const america = [
             "id": "06",
             "properties": {
                 "name": "California",
-                "sales": 19
             },
             "geometry": {
                 "type": "Polygon",
@@ -11203,7 +11202,6 @@ const america = [
             "id": "37",
             "properties": {
                 "name": "North Carolina",
-                "sales": 16
             },
             "geometry": {
                 "type": "Polygon",
